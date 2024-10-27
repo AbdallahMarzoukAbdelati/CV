@@ -13,7 +13,6 @@
         --accent-color: #8bc34a;
       }
 
-      /* Resetting margins and paddings */
       * {
         margin: 0;
         padding: 0;
@@ -44,6 +43,7 @@
         color: white;
         padding: clamp(1rem, 5vw, 2rem);
         text-align: center;
+        position: relative;
       }
 
       .profile-img {
@@ -68,16 +68,23 @@
         background: white;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      section:hover {
+        transform: scale(1.02);
       }
 
       h1 {
         font-size: clamp(1.5rem, 5vw, 2.5rem);
+        margin-bottom: 0.5rem;
       }
 
       h2 {
         font-size: clamp(1.2rem, 4vw, 1.8rem);
         color: var(--primary-color);
         border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 0.5rem;
         margin-bottom: 1rem;
       }
 
@@ -86,7 +93,52 @@
         color: var(--primary-color);
       }
 
-      .expertise-grid,
+      .expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+        gap: clamp(0.5rem, 2vw, 1rem);
+        margin-top: 1rem;
+      }
+
+      .expertise-item {
+        background: var(--light-bg);
+        padding: clamp(0.8rem, 2vw, 1rem);
+        border-radius: 8px;
+        border-left: 4px solid var(--secondary-color);
+        transition: transform 0.3s ease;
+      }
+
+      .expertise-item:hover {
+        transform: scale(1.05);
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(0.5rem, 2vw, 1rem);
+      }
+
+      .skill-tag {
+        background: var(--light-bg);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 1px solid var(--secondary-color);
+        font-size: clamp(0.8rem, 2vw, 1rem);
+      }
+
+      .skill-tag:hover {
+        background: var(--secondary-color);
+        color: white;
+      }
+
+      .experience-item {
+        margin-bottom: 1.5rem;
+        padding-left: clamp(0.5rem, 2vw, 1rem);
+        border-left: 3px solid var(--secondary-color);
+      }
+
       .certification-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
@@ -94,19 +146,16 @@
         margin-top: 1rem;
       }
 
-      .expertise-item,
-      .certification-item,
-      .skill-tag {
+      .certification-item {
         background: var(--light-bg);
         padding: clamp(0.8rem, 2vw, 1rem);
         border-radius: 8px;
-        border-left: 4px solid var(--secondary-color);
+        text-align: center;
+        transition: transform 0.3s ease;
       }
 
-      .skills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: clamp(0.5rem, 2vw, 1rem);
+      .certification-item:hover {
+        transform: scale(1.05);
       }
 
       .contact-info {
@@ -123,6 +172,7 @@
         font-size: clamp(0.9rem, 2vw, 1rem);
       }
 
+      /* Theme toggle button */
       #theme-toggle {
         position: fixed;
         top: 10px;
@@ -133,6 +183,7 @@
         border: none;
         border-radius: 50%;
         cursor: pointer;
+        transition: background 0.3s ease;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -147,28 +198,35 @@
       }
 
       .theme-icon.sun {
-        opacity: 1;
+        opacity: 1; /* Sun is fully visible */
       }
+
       .theme-icon.moon {
-        opacity: 0;
+        opacity: 0; /* Moon is initially invisible */
       }
 
       .dark-mode .theme-icon.sun {
-        opacity: 0;
-      }
-      .dark-mode .theme-icon.moon {
-        opacity: 1;
+        opacity: 0; /* Sun fades out in dark mode */
       }
 
+      .dark-mode .theme-icon.moon {
+        opacity: 1; /* Moon fades in in dark mode */
+      }
+
+      /* Additional styling for dark mode */
       .dark-mode {
         background: #1a1a1a;
         color: #ffffff;
       }
-      .dark-mode section,
+
+      .dark-mode section {
+        background: #2d2d2d;
+      }
+
       .dark-mode .expertise-item,
       .dark-mode .certification-item,
       .dark-mode .skill-tag {
-        background: #2d2d2d;
+        background: #3d3d3d;
         color: #ffffff;
       }
     </style>
@@ -204,7 +262,7 @@
         <div class="skills">
           <div class="skill-tag">Agronomy</div>
           <div class="skill-tag">Leadership</div>
-          <div class="skill-tag">Communication</div>
+          <div class="skill-tag">Communication Skills</div>
           <div class="skill-tag">Research</div>
           <div class="skill-tag">Project Management</div>
         </div>
@@ -213,22 +271,24 @@
       <section>
         <h2>Experience</h2>
         <div class="experience-item">
-          <h3>Assistant Site Manager and Agricultural Engineer</h3>
-          <p>Al-Ashraf Group - One and a Half Million Acres Project, Siwa</p>
-          <p>Aug 2023 - Present</p>
-          <p>
+          <h3>
+            Agronomist at Al-Ashraf Group - One and a Half Million Acres
+            Project, Siwa
+          </h3>
+          <h4>Aug 2023 - Present</h4>
+          <h4>
             Responsibilities include managing irrigation systems, fertilization,
             and crop management for palm and olive trees.
-          </p>
+          </h4>
         </div>
       </section>
 
       <section>
         <h2>Education</h2>
-        <div class="education-item">
+        <div class="experience-item">
           <h3>Bachelor of Agricultural Sciences</h3>
-          <p>Al-Azhar University</p>
-          <p>2021 - 2024</p>
+          <h4>Al-Azhar University</h4>
+          <h4>2021 - 2024</h4>
         </div>
       </section>
 
@@ -260,12 +320,8 @@
           </div>
           <div class="contact-item">
             🌐
-            <span
-              ><a
-                href="https://www.linkedin.com/in/AbdallahMarzoukAbdelati/"
-                target="_blank"
-                >LinkedIn Profile</a
-              ></span
+            <a href="https://www.linkedin.com/in/AbdallahMarzoukAbdelati/"
+              >Linkedin Profile</a
             >
           </div>
         </div>
@@ -279,8 +335,20 @@
 
     <script>
       const themeToggle = document.getElementById("theme-toggle");
+
       themeToggle.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
+        const sunIcon = themeToggle.querySelector(".theme-icon.sun");
+        const moonIcon = themeToggle.querySelector(".theme-icon.moon");
+
+        // Toggle visibility of sun and moon icons
+        if (sunIcon.style.opacity === "0") {
+          sunIcon.style.opacity = "1";
+          moonIcon.style.opacity = "0";
+        } else {
+          sunIcon.style.opacity = "0";
+          moonIcon.style.opacity = "1";
+        }
       });
     </script>
   </body>
