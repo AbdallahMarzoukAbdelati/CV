@@ -1,355 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>المهندس/ عبدالله مرزوق عبدالعاطي</title>
-    <style>
-      :root {
-        --primary-color: #2d5a27;
-        --secondary-color: #7cb342;
-        --text-color: #333;
-        --light-bg: #f1f8e9;
-        --accent-color: #8bc34a;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdallah Marzouk Abdelati - CV</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2d5a27;
+      --secondary-color: #7cb342;
+      --text-color: #333;
+      --light-bg: #f1f8e9;
+    }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fcfcfc;
+      color: var(--text-color);
+      font-size: 16px;
+      line-height: 1.6;
+    }
 
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, Arial, sans-serif;
-        line-height: 1.6;
-        color: var(--text-color);
-        background-color: #fcfcfc;
-        font-size: 16px;
-      }
+    header {
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
 
-      /* Responsive typography */
-      @media (max-width: 768px) {
-        body {
-          font-size: 14px;
-        }
-      }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
 
-      header {
-        background: linear-gradient(
-          to right,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        color: white;
-        padding: clamp(1rem, 5vw, 2rem);
-        text-align: center;
-        position: relative;
-      }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
 
-      .profile-img {
-        width: clamp(100px, 30vw, 150px);
-        height: clamp(100px, 30vw, 150px);
-        border-radius: 50%;
-        margin: 1rem auto;
-        display: block;
-        border: 4px solid white;
-        object-fit: cover;
-      }
+    header h2 {
+      margin: 0.5rem 0 1rem;
+      font-size: 1.5rem;
+      color: #d4edda;
+    }
 
-      .container {
-        width: min(95%, 1000px);
-        margin: 0 auto;
-        padding: clamp(1rem, 3vw, 2rem);
-      }
+    nav {
+      background: var(--light-bg);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-      section {
-        margin-bottom: clamp(1rem, 3vw, 2rem);
-        padding: clamp(1rem, 3vw, 1.5rem);
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-      }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 1.5rem;
+    }
 
-      section:hover {
-        transform: scale(1.02);
-      }
+    nav a {
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 1rem;
+    }
 
-      h1 {
-        font-size: clamp(1.5rem, 5vw, 2.5rem);
-        margin-bottom: 0.5rem;
-      }
+    nav a:hover {
+      color: var(--secondary-color);
+    }
 
-      h2 {
-        font-size: clamp(1.2rem, 4vw, 1.8rem);
-        color: var(--primary-color);
-        border-bottom: 2px solid var(--secondary-color);
-        padding-bottom: 0.5rem;
-        margin-bottom: 1rem;
-      }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+    }
 
-      h3 {
-        font-size: clamp(1rem, 3vw, 1.4rem);
-        color: var(--primary-color);
-      }
+    section {
+      margin-bottom: 2rem;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-      .expertise-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
-        gap: clamp(0.5rem, 2vw, 1rem);
-        margin-top: 1rem;
-      }
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
 
-      .expertise-item {
-        background: var(--light-bg);
-        padding: clamp(0.8rem, 2vw, 1rem);
-        border-radius: 8px;
-        border-left: 4px solid var(--secondary-color);
-        transition: transform 0.3s ease;
-      }
+    section ul {
+      padding-left: 1.5rem;
+    }
 
-      .expertise-item:hover {
-        transform: scale(1.05);
-      }
+    .btn-download {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      color: white;
+      background: var(--primary-color);
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
 
-      .skills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: clamp(0.5rem, 2vw, 1rem);
-      }
+    .btn-download:hover {
+      background: var(--secondary-color);
+    }
 
-      .skill-tag {
-        background: var(--light-bg);
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        cursor: pointer;
-        transition: all 0.3s;
-        border: 1px solid var(--secondary-color);
-        font-size: clamp(0.8rem, 2vw, 1rem);
-      }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
 
-      .skill-tag:hover {
-        background: var(--secondary-color);
-        color: white;
-      }
+    .social-icons a {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+    }
 
-      .experience-item {
-        margin-bottom: 1.5rem;
-        padding-left: clamp(0.5rem, 2vw, 1rem);
-        border-left: 3px solid var(--secondary-color);
-      }
+    #certifications ul {
+      list-style: none;
+      padding: 0;
+    }
 
-      .certification-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-        gap: clamp(0.5rem, 2vw, 1rem);
-        margin-top: 1rem;
-      }
+    #certifications li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
 
-      .certification-item {
-        background: var(--light-bg);
-        padding: clamp(0.8rem, 2vw, 1rem);
-        border-radius: 8px;
-        text-align: center;
-        transition: transform 0.3s ease;
-      }
+    #certifications li i {
+      color: var(--secondary-color);
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
+    }
 
-      .certification-item:hover {
-        transform: scale(1.05);
-      }
+    #languages ul {
+      list-style: none;
+      padding: 0;
+    }
 
-      .contact-info {
-        display: flex;
-        justify-content: center;
-        gap: clamp(1rem, 3vw, 2rem);
-        flex-wrap: wrap;
-      }
+    #languages li {
+      margin-bottom: 0.5rem;
+    }
 
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: clamp(0.9rem, 2vw, 1rem);
-      }
+    .qr-code {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
 
-      /* Theme toggle button */
-      #theme-toggle {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        padding: 10px;
-        background: var(--primary-color);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: background 0.3s ease;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        z-index: 1000;
-      }
+    .qr-code img {
+      width: 150px;
+      height: auto;
+    }
 
-      .theme-icon {
-        font-size: 1.5rem;
-        transition: opacity 0.5s ease;
-      }
+    .update-info {
+      text-align: center;
+      margin-top: 2rem;
+      font-style: italic;
+      color: var(--primary-color);
+    }
 
-      .theme-icon.sun {
-        opacity: 1; /* Sun is fully visible */
-      }
+    .update-info a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="abdalla.jpg" alt="Abdallah Marzouk Abdelati">
+    <h1>Eng: Abdallah Marzouk Abdelati</h1>
+    <h2>CV2024💚</h2>
+  </header>
 
-      .theme-icon.moon {
-        opacity: 0; /* Moon is initially invisible */
-      }
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#languages">Languages</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-      .dark-mode .theme-icon.sun {
-        opacity: 0; /* Sun fades out in dark mode */
-      }
+  <div class="container">
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Dedicated Agricultural Engineer with a Bachelor of Science in Agriculture from Al-Azhar University (2024). I have demonstrated expertise in managing irrigation and fertilization systems for palm and olive trees, optimizing irrigation networks, and enhancing agricultural workflows. My experience extends to teaching chemistry and biology, where I developed educational content and delivered interactive lessons to high school students. I am skilled in data analysis, project planning, and applying sustainable agricultural practices to improve productivity. Additionally, I hold multiple certifications in advanced computer skills, first aid, chemical water treatment, and food safety.</p>
+    </section>
 
-      .dark-mode .theme-icon.moon {
-        opacity: 1; /* Moon fades in in dark mode */
-      }
+    <!-- Expertise Section -->
+    <section id="expertise">
+      <h2>Expertise</h2>
+      <ul>
+        <li>Irrigation Systems for Palm and Olive Trees</li>
+        <li>Fertilization Management</li>
+        <li>Sustainable Agriculture</li>
+        <li>Data Analysis in Agriculture</li>
+        <li>Teaching Chemistry and Biology</li>
+      </ul>
+    </section>
 
-      /* Additional styling for dark mode */
-      .dark-mode {
-        background: #1a1a1a;
-        color: #ffffff;
-      }
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Leadership and Team Management</li>
+        <li>Project Planning and Crisis Management</li>
+        <li>Data Analysis in Agriculture</li>
+        <li>Workflow Improvement</li>
+        <li>First Aid and Emergency Response</li>
+      </ul>
+    </section>
 
-      .dark-mode section {
-        background: #2d2d2d;
-      }
+    <!-- Experience Section -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <div>
+        <h3>Assistant Site Manager and Agricultural Engineer</h3>
+        <p>Al-Ashraf Group - One and a Half Million Acres Project, Siwa</p>
+        <p>Aug 2023 - 2024 </p>
+        <ul>
+          <li>Managed irrigation and fertilization systems for date palm and olive trees.</li>
+          <li>Supervised and optimized the performance of irrigation networks.</li>
+          <li>Ensured workflow efficiency and compliance with agricultural standards.</li>
+          <li>Acted as Site Manager in their absence, showcasing leadership and decision-making skills.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Chemistry and Biology Instructor</h3>
+        <p>Online Educational Academy</p>
+        <p>2020 - 2024</p>
+        <ul>
+          <li>Taught chemistry and biology to high school students.</li>
+          <li>Developed educational content and delivered interactive online lessons.</li>
+          <li>Assessed student progress and provided constructive feedback to enhance academic performance.</li>
+        </ul>
+      </div>
+    </section>
 
-      .dark-mode .expertise-item,
-      .dark-mode .certification-item,
-      .dark-mode .skill-tag {
-        background: #3d3d3d;
-        color: #ffffff;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <img
-        src="abdalla.jpg"
-        alt="Profile Picture"
-        class="profile-img"
-        loading="lazy"
-      />
-      <h1>Eng: Abdallah Marzouk Abdelati</h1>
-      <p>Professional Agronomist | Crop Management Specialist</p>
-    </header>
+    <!-- Certifications Section -->
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul>
+        <li><i class="fas fa-certificate"></i> ICDL Certificate - Cairo University</li>
+        <li><i class="fas fa-certificate"></i> Advanced English Proficiency</li>
+        <li><i class="fas fa-certificate"></i> First Aid Course Certificate</li>
+        <li><i class="fas fa-certificate"></i> Chemical Water Treatment Certification</li>
+        <li><i class="fas fa-certificate"></i> Food Safety and Quality Certification</li>
+      </ul>
+      <div class="qr-code">
+        <img src="qr-code.jpg" alt="QR Code for Certificates">
+      </div>
+      <!-- Button to download CV -->
+      <a class="btn-download" href="Abdallah_Marzouk_Abdelati_Agriculture_Engineer_2024.pdf" download>Download CV</a>
+    </section>
 
-    <div class="container">
-      <section>
-        <h2>Expertise</h2>
-        <div class="expertise-grid">
-          <div class="expertise-item">
-            Irrigation Systems for Palm and Olive Trees
-          </div>
-          <div class="expertise-item">Fertilization Management</div>
-          <div class="expertise-item">Sustainable Agriculture</div>
-          <div class="expertise-item">Soil and Crop Management</div>
-          <div class="expertise-item">Data Analysis in Agronomy</div>
-        </div>
-      </section>
+    <!-- Achievements Section -->
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <ul>
+        <li>Award for Best Irrigation System Design, XYZ Institute, 2023</li>
+        <li>Top Innovator in Agricultural Sustainability, ABC Organization, 2022</li>
+      </ul>
+    </section>
 
-      <section>
-        <h2>Skills</h2>
-        <div class="skills">
-          <div class="skill-tag">Agronomy</div>
-          <div class="skill-tag">Leadership</div>
-          <div class="skill-tag">Communication Skills</div>
-          <div class="skill-tag">Research</div>
-          <div class="skill-tag">Project Management</div>
-        </div>
-      </section>
+    <!-- Languages Section -->
+    <section id="languages">
+      <h2>Languages</h2>
+      <ul>
+        <li>Arabic: Native</li>
+        <li>English: Advanced</li>
+      </ul>
+    </section>
 
-      <section>
-        <h2>Experience</h2>
-        <div class="experience-item">
-          <h3>
-            Agronomist at Al-Ashraf Group - One and a Half Million Acres
-            Project, Siwa
-          </h3>
-          <h4>Aug 2023 - Present</h4>
-          <h4>
-            Responsibilities include managing irrigation systems, fertilization,
-            and crop management for palm and olive trees.
-          </h4>
-        </div>
-      </section>
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Phone: +201152344005 | +20 114 655 3523</p>
+      <p>Email: abdallah.marzouk2021@gmail.com</p>
+      <p>Address: Ali bin Abi Talib Street, Shubra Al-Kheima, Qalyubia</p>
+      <div class="social-icons">
+        <a href="https://wa.me/+201152344005"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/AbdallahMarzoukAbdelati"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/AbdallahMarzoukAbdelatti"><i class="fab fa-facebook"></i></a>
+      </div>
+    </section>
 
-      <section>
-        <h2>Education</h2>
-        <div class="experience-item">
-          <h3>Bachelor of Agricultural Sciences</h3>
-          <h4>Al-Azhar University</h4>
-          <h4>2021 - 2024</h4>
-        </div>
-      </section>
-
-      <section>
-        <h2>Certifications</h2>
-        <div class="certification-grid">
-          <div class="certification-item">ICDL Certificate</div>
-          <div class="certification-item">
-            Communication Skills Certificate - Cairo University
-          </div>
-          <div class="certification-item">
-            Body Language Course - Yenfaa Platform
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Contact</h2>
-        <div class="contact-info">
-          <div class="contact-item">
-            📧
-            <span
-              >abdullahqader72649@azhar.edu.eg /
-              abdallah.marzouk2021@gmail.com</span
-            >
-          </div>
-          <div class="contact-item">
-            📞 <span>(+20) 1152344005 / (+20) 1146553523</span>
-          </div>
-          <div class="contact-item">
-            🌐
-            <a href="https://www.linkedin.com/in/AbdallahMarzoukAbdelati/"
-              >Linkedin Profile</a
-            >
-          </div>
-        </div>
-      </section>
+    <!-- Update Info Section -->
+    <div class="update-info">
+      <p>The CV will be updated and uploaded to the following link when necessary:</p>
+      <a href="https://drive.google.com/drive/folders/1Qpq3lerJM9KPN3qZfwSNRFzigWNOmY5Y" target="_blank">CV Updates - Google Drive</a>
     </div>
-
-    <button id="theme-toggle" aria-label="Toggle theme">
-      <span class="theme-icon sun">🌞</span>
-      <span class="theme-icon moon">🌜</span>
-    </button>
-
-    <script>
-      const themeToggle = document.getElementById("theme-toggle");
-
-      themeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        const sunIcon = themeToggle.querySelector(".theme-icon.sun");
-        const moonIcon = themeToggle.querySelector(".theme-icon.moon");
-
-        // Toggle visibility of sun and moon icons
-        if (sunIcon.style.opacity === "0") {
-          sunIcon.style.opacity = "1";
-          moonIcon.style.opacity = "0";
-        } else {
-          sunIcon.style.opacity = "0";
-          moonIcon.style.opacity = "1";
-        }
-      });
-    </script>
-  </body>
+  </div>
+</body>
 </html>
